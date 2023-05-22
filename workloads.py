@@ -95,7 +95,6 @@ def workload6():
             graph.add_edge(('B', 'D'))
             graph.add_edge(('C', 'E'))
             graph.add_edge(('D', 'E'))
-            graph.add_edge(('E', 'A'))
             graph.add_edge(('E', 'B'))
             graph.add_edge(('E', 'C'))
             graph.add_edge(('E', 'D'))
@@ -117,7 +116,6 @@ def workload7():
         graph.add_edge(('B', 'D'))
         graph.add_edge(('C', 'E'))
         graph.add_edge(('D', 'E'))
-        graph.add_edge(('E', 'A'))
         graph.add_edge(('E', 'B'))
         graph.add_edge(('E', 'C'))
         graph.add_edge(('E', 'D'))
@@ -143,4 +141,4 @@ if __name__ == '__main__':
     if len(args) == 1:
         main(0) # default workload
     else:
-        main(args[1])
+        main(int(args[1]))
