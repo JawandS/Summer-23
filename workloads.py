@@ -56,7 +56,7 @@ def workload3():
 def workload4():
     from _thread import start_new_thread
     num_iter = 1000
-    threads = 250
+    threads = 100
     def workload4_thread():
         for counter in range(num_iter):
             def fib(n):
@@ -64,7 +64,7 @@ def workload4():
                     return n
                 else:
                     return fib(n - 1) + fib(n - 2)
-            fib(25)
+            fib(20)
     for thread in range(threads):
         start_new_thread(workload4_thread, ())
 
@@ -77,61 +77,59 @@ def workload5():
                 return n
             else:
                 return fib(n - 1) + fib(n - 2)
-        fib(25)
+        fib(20)
 
 # workload 6 - graph traversal, multithreaded
 def workload6():
-    import pygraph
+    from pygraph.classes.graph import graph
+    from pygraph.algorithms.searching import breadth_first_search    
     from _thread import start_new_thread
     num_iter = 1500
     threads = 500
     def workload6_thread():
         for counter in range(num_iter):
-            graph = pygraph.graph()
-            graph.add_nodes(['A', 'B', 'C', 'D', 'E'])
-            graph.add_edge(('A', 'B'))
-            graph.add_edge(('A', 'C'))
-            graph.add_edge(('B', 'C'))
-            graph.add_edge(('B', 'D'))
-            graph.add_edge(('C', 'E'))
-            graph.add_edge(('D', 'E'))
-            graph.add_edge(('E', 'B'))
-            graph.add_edge(('E', 'C'))
-            graph.add_edge(('E', 'D'))
-            graph.add_edge(('E', 'E'))
-            graph.bfs('A')
+            g = graph()
+            g.add_nodes(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"])
+            g.add_edge(("A", "B"))
+            g.add_edge(("A", "C"))
+            g.add_edge(("B", "D"))
+            g.add_edge(("B", "E"))
+            g.add_edge(("C", "F"))
+            g.add_edge(("E", "G"))
+            pred, dist = breadth_first_search(g, root="A")
     for thread in range(threads):
         start_new_thread(workload6_thread, ())
 
 # workload 7 - graph traversal, single thread
 def workload7():
-    import pygraph
+    from pygraph.classes.graph import graph
+    from pygraph.algorithms.searching import breadth_first_search
     num_iter = 1500
     for counter in range(num_iter):
-        graph = pygraph.graph()
-        graph.add_nodes(['A', 'B', 'C', 'D', 'E'])
-        graph.add_edge(('A', 'B'))
-        graph.add_edge(('A', 'C'))
-        graph.add_edge(('B', 'C'))
-        graph.add_edge(('B', 'D'))
-        graph.add_edge(('C', 'E'))
-        graph.add_edge(('D', 'E'))
-        graph.add_edge(('E', 'B'))
-        graph.add_edge(('E', 'C'))
-        graph.add_edge(('E', 'D'))
-        graph.add_edge(('E', 'E'))
-        graph.bfs('A')
+        g = graph()
+        g.add_nodes(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"])
+        g.add_edge(("A", "B"))
+        g.add_edge(("A", "C"))
+        g.add_edge(("B", "D"))
+        g.add_edge(("B", "E"))
+        g.add_edge(("C", "F"))
+        g.add_edge(("E", "G"))
+        pred, dist = breadth_first_search(g, root="A")
 
 def main(workloadNum):
     # start time
     start_time = time.time()
+    process_start = time.process_time()
+    perf_start = time.perf_counter()
     # workloads
     workloads = [workload0, workload1, workload2, workload3, workload4, workload5, workload6, workload7]
     workloadNames = {"multiSqrt": workload0, "singleSqrt": workload1, "multiMatMul": workload2, "singleMatMul": workload3, "multiFib": workload4, "singleFib": workload5, "multiGraph": workload6, "singleGraph": workload7}
     # execute corresponding workload
     workloads[int(workloadNum)]()
     # end time
-    print(round(time.time() - start_time, 2))
+    print("Standard time: " + str(round(time.time() - start_time, 2)))
+    print("Process time: " + str(round(time.process_time() - process_start, 2)))
+    print("Perf counter: " + str(round(time.perf_counter() - perf_start, 2)))
 
 # main method (note pip install pygraph and numpy)
 if __name__ == '__main__':
