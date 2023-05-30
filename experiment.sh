@@ -15,7 +15,7 @@ experiment() {
   fi
   # run the workload and measure how long it took
   startTime=$SECONDS
-  # TODO : run workload
+  stress-ng --cpu 1 --cpu-load 50 --timeout 10s --metrics --no-rand-seed
   endTime=$SECONDS
   # end tracing
   killall -q bpftrace
