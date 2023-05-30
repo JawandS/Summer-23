@@ -1,0 +1,35 @@
+	---------Run 1---------
+
+Base Run
+314135 raw.txt
+
+One Context Switch
+2 raw.txt
+	---------Run 2---------
+
+Base Run
+301851 raw.txt
+
+One Context Switch
+2 raw.txt
+	---------Run 3---------
+
+Base Run
+316553 raw.txt
+
+One Context Switch
+2 raw.txt
+	---------Run 4---------
+
+Base Run
+339103 raw.txt
+
+One Context Switch
+2 raw.txt
+	---------Run 5---------
+
+Base Run
+313575 raw.txt
+
+One Context Switch
+2 raw.txt
