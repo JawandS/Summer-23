@@ -34,4 +34,4 @@ done
 # git pull
 git add .
 git commit -m "add and process experiment $1"
-# git push # add to git
+git push # add to git
