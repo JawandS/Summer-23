@@ -14,16 +14,12 @@ experiment() {
     sudo bpftrace overhead.bt >>raw.txt & # begin tracing
   fi
   # run the workload and measure how long it took
-  startTime=$SECONDS
-  stress-ng --cpu 1 --cpu-load 50 --timeout 10s --metrics --no-rand-seed
-  endTime=$SECONDS
+  stress-ng --cpu 1 --cpu-load 50 --timeout 10s --metrics --no-rand-seed | tee Logs/log_"$1".txt
   # end tracing
   killall -q bpftrace
   # update logs
   outputSize=$(wc -l raw.txt) # context switches recorded
   echo "$outputSize" >>Logs/log_"$1".txt
-  echo "$startTime" >>Logs/log_"$1".txt
-  echo "$endTime" >>Logs/log_"$1".txt
 }
 # run experiment
 echo "Starting experiment ${1}"
