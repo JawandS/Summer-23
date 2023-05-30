@@ -15,7 +15,7 @@ experiment() {
   fi
   truncate -s 0 raw.txt
   # run the workload and measure how long it took
-  stress-ng --cpu 1 --cpu-load 50 --timeout 10s --metrics --no-rand-seed | tee -a Logs/log_"$1".txt
+  stress-ng --cpu 1 --cpu-load 50 --timeout 10s --metrics --no-rand-seed >> Logs/log_"$1".txt 2>&1
   # end tracing
   killall -q bpftrace
   # update logs
