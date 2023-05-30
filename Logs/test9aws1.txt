@@ -1,11 +1,3 @@
---cpu  --cpu-load  --timeout 10s\n
-	---------Run 1---------
-
-Base Run
-Value --cpu-load contains non-numeric: '-cpu-load'
-0 raw.txt
-
-One Context Switch
 --cpu 3 --cpu-load 100 --timeout 10s\n
 	---------Run 1---------
 
