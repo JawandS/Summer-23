@@ -1,6 +1,3 @@
-	---------Run 1---------
-
-Base Run
 --cpu 1 --cpu-load 50 --timeout 10s\n
 	---------Run 1---------
 
