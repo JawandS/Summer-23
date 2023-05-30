@@ -28,7 +28,9 @@ for _ in {1..5}; do # number of iterations
   sleep 1
   # experiment phase
   iterationCounter=$((iterationCounter + 1)) && printf "\t---------Run %s---------\n" "$iterationCounter"
+  printf "Base Run\n"
   experiment "$1" X # base run
+  printf "One Context Switch\n"
   experiment "$1" 1 # 1 context switch
 done
 # git pull
