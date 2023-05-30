@@ -4,15 +4,21 @@ import time
 
 # workload 0 - square root, multithreaded
 def workload0():
-    from _thread import start_new_thread
+    import threading
     num_iter = 3000
     threads = 500
     def workload0_thread():
         for counter in range(num_iter):
             x = 0.5
             y = x ** 0.5
-    for thread in range(threads):
-        start_new_thread(workload0_thread, ())
+    threadPool = []
+    for threadIdx in range(threads):
+        t = threading.Thread(target=workload0_thread, name="thread_" + str(threadIdx))
+        threadPool.append(t)
+    for thread in threadPool:
+        thread.start()
+    for thread in threadPool:
+        thread.join()
 
 # workload 1 - square root, single thread
 def workload1():
