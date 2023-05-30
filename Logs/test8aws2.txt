@@ -1,0 +1,86 @@
+--cpu 2 --cpu-load 100 --timeout 10s\n
+	---------Run 1---------
+
+Base Run
+stress-ng: info:  [10036] dispatching hogs: 2 cpu
+stress-ng: info:  [10036] successful run completed in 10.03s
+stress-ng: info:  [10036] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [10036]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [10036] cpu                3636     10.02     20.03      0.00       362.75       181.53
+0 raw.txt
+
+One Context Switch
+stress-ng: info:  [10051] dispatching hogs: 2 cpu
+stress-ng: info:  [10051] successful run completed in 10.16s
+stress-ng: info:  [10051] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [10051]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [10051] cpu                2074     10.12     11.85      3.54       205.00       134.76
+279711 raw.txt
+	---------Run 2---------
+
+Base Run
+stress-ng: info:  [10070] dispatching hogs: 2 cpu
+stress-ng: info:  [10070] successful run completed in 10.02s
+stress-ng: info:  [10070] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [10070]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [10070] cpu                3636     10.02     20.02      0.00       362.96       181.62
+0 raw.txt
+
+One Context Switch
+stress-ng: info:  [10085] dispatching hogs: 2 cpu
+stress-ng: info:  [10085] successful run completed in 10.07s
+stress-ng: info:  [10085] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [10085]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [10085] cpu                2131     10.04     12.04      3.22       212.29       139.65
+288578 raw.txt
+	---------Run 3---------
+
+Base Run
+stress-ng: info:  [10105] dispatching hogs: 2 cpu
+stress-ng: info:  [10105] successful run completed in 10.04s
+stress-ng: info:  [10105] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [10105]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [10105] cpu                3636     10.03     20.05      0.00       362.47       181.35
+0 raw.txt
+
+One Context Switch
+stress-ng: info:  [10120] dispatching hogs: 2 cpu
+stress-ng: info:  [10120] successful run completed in 10.07s
+stress-ng: info:  [10120] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [10120]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [10120] cpu                2122     10.06     12.05      3.16       210.93       139.51
+297458 raw.txt
+	---------Run 4---------
+
+Base Run
+stress-ng: info:  [10139] dispatching hogs: 2 cpu
+stress-ng: info:  [10139] successful run completed in 10.03s
+stress-ng: info:  [10139] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [10139]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [10139] cpu                3636     10.03     20.03      0.00       362.63       181.53
+0 raw.txt
+
+One Context Switch
+stress-ng: info:  [10154] dispatching hogs: 2 cpu
+stress-ng: info:  [10154] successful run completed in 10.05s
+stress-ng: info:  [10154] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [10154]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [10154] cpu                2074     10.04     12.09      3.11       206.51       136.45
+294098 raw.txt
+	---------Run 5---------
+
+Base Run
+stress-ng: info:  [10173] dispatching hogs: 2 cpu
+stress-ng: info:  [10173] successful run completed in 10.01s
+stress-ng: info:  [10173] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [10173]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [10173] cpu                3636     10.01     20.01      0.00       363.26       181.71
+0 raw.txt
+
+One Context Switch
+stress-ng: info:  [10188] dispatching hogs: 2 cpu
+stress-ng: info:  [10188] successful run completed in 10.10s
+stress-ng: info:  [10188] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [10188]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [10188] cpu                2133     10.07     12.04      3.31       211.90       138.96
+281032 raw.txt
