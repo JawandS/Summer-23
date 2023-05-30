@@ -14,7 +14,7 @@ experiment() {
     sudo bpftrace overhead.bt >>raw.txt & # begin tracing
   fi
   # run the workload and measure how long it took
-  stress-ng --cpu 1 --cpu-load 50 --timeout 10s --metrics --no-rand-seed | tee Logs/log_"$1".txt
+  stress-ng --cpu 1 --cpu-load 50 --timeout 10s --metrics --no-rand-seed | tee -a Logs/log_"$1".txt
   # end tracing
   killall -q bpftrace
   # update logs
@@ -27,10 +27,10 @@ iterationCounter=0
 for _ in {1..5}; do # number of iterations
   sleep 1
   # experiment phase
-  iterationCounter=$((iterationCounter + 1)) && printf "\t---------Run %s---------\n" "$iterationCounter"
-  printf "Base Run\n"
+  iterationCounter=$((iterationCounter + 1)) && printf "\t---------Run %s---------\n" "$iterationCounter" | tee -a Logs/log_"$1".txt
+  printf "\nBase Run\n" | tee -a Logs/log_"$1".txt
   experiment "$1" X # base run
-  printf "One Context Switch\n"
+  printf "\nOne Context Switch\n" | tee -a Logs/log_"$1".txt
   experiment "$1" 1 # 1 context switch
 done
 # git pull
