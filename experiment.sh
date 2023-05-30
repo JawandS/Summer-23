@@ -1,10 +1,10 @@
 #!/bin/bash
 # start overhead
 git pull
-# echo "$2" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor # powersave or performance
+# sudo ./experiment.sh expID workers load
 # define experiment
 numCPU="$2"
-cpuLoad=50
+cpuLoad="$3"
 timeout=10s
 experiment() {
   # setup
