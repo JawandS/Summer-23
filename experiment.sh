@@ -11,7 +11,7 @@ experiment() {
   sleep 1 # wait for 1 second
   # run tracing if necessary
   if [ "$2" == "X" ]; then
-    sudo bpftrace Scripts/A.bt >>raw.txt & # begin tracing
+    sudo bpftrace overhead.bt >>raw.txt & # begin tracing
   fi
   # run the workload and measure how long it took
   startTime=$SECONDS
