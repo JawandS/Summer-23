@@ -38,7 +38,7 @@ for _ in {1..5}; do # number of iterations
   printf "\nOne Context Switch\n" | tee -a Logs/"$1".txt
   experiment "$1" 1 # 1 context switch
 done
-# git pull
+git pull
 git add .
 git commit -m "add and process experiment $1"
 git push # add to git
