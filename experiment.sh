@@ -3,7 +3,7 @@
 git pull
 # echo "$2" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor # powersave or performance
 # define experiment
-numCPU=1
+numCPU="$2"
 cpuLoad=50
 timeout=10s
 experiment() {
