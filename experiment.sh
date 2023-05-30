@@ -10,7 +10,7 @@ experiment() {
   truncate -s 0 raw.txt
   sleep 1 # wait for 1 second
   # run tracing if necessary
-  if [ "$2" == "X" ]; then
+  if [ "$2" == "1" ]; then
     sudo bpftrace overhead.bt >>raw.txt & # begin tracing
   fi
   truncate -s 0 raw.txt
