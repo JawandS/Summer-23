@@ -1,8 +1,11 @@
 #!/bin/bash
 # start overhead
-# git pull
+git pull
 # echo "$2" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor # powersave or performance
 # define experiment
+numCPU=1
+cpuLoad=50
+timeout=10s
 experiment() {
   # setup
   killall -q python3
@@ -15,7 +18,7 @@ experiment() {
   fi
   truncate -s 0 raw.txt
   # run the workload and measure how long it took
-  stress-ng --cpu 1 --cpu-load 50 --timeout 10s --metrics --no-rand-seed >> Logs/"$1".txt 2>&1
+  stress-ng --cpu $numCPU --cpu-load $cpuLoad --timeout $timeout --metrics --no-rand-seed >> Logs/"$1".txt 2>&1
   # end tracing
   killall -q bpftrace
   # update logs
@@ -23,6 +26,7 @@ experiment() {
   echo "$outputSize" | tee -a Logs/"$1".txt
 }
 # run experiment
+printf "--cpu $numCPU --cpu-load $cpuLoad --timeout $timeout\n" | tee -a Logs/"$1".txt
 echo "Starting experiment ${1}"
 iterationCounter=0
 for _ in {1..5}; do # number of iterations
