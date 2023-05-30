@@ -13,13 +13,14 @@ experiment() {
   if [ "$2" == "X" ]; then
     sudo bpftrace overhead.bt >>raw.txt & # begin tracing
   fi
+  truncate -s 0 raw.txt
   # run the workload and measure how long it took
   stress-ng --cpu 1 --cpu-load 50 --timeout 10s --metrics --no-rand-seed | tee -a Logs/log_"$1".txt
   # end tracing
   killall -q bpftrace
   # update logs
   outputSize=$(wc -l raw.txt) # context switches recorded
-  echo "$outputSize" >>Logs/log_"$1".txt
+  echo "$outputSize" | tee -a Logs/log_"$1".txt
 }
 # run experiment
 echo "Starting experiment ${1}"
