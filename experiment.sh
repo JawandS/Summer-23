@@ -26,7 +26,7 @@ experiment() {
   echo "$outputSize" | tee -a Logs/"$1".txt
 }
 # run experiment
-echo "--cpu $numCPU --cpu-load $cpuLoad --timeout $timeout\n" | tee -a Logs/"$1".txt
+echo "--cpu $numCPU --cpu-load $cpuLoad --timeout $timeout" | tee -a Logs/"$1".txt
 echo "Starting experiment ${1}"
 iterationCounter=0
 for _ in {1..5}; do # number of iterations

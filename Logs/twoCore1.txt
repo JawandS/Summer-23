@@ -1,4 +1,4 @@
---cpu 10 --cpu-load 80 --timeout 10s\n
+--cpu 10 --cpu-load 80 --timeout 10s\n; cores being used: 1
 	---------Run 1---------
 
 Base Run
