@@ -1,0 +1,96 @@
+--cpu 10 --cpu-load 80 --timeout 10s\n
+	---------Run 1---------
+
+Base Run
+stress-ng: info:  [16315] dispatching hogs: 10 cpu
+stress-ng: info:  [16316] stress-ng-cpu: CPU affinity probably set, this can affect CPU loading
+stress-ng: info:  [16315] successful run completed in 10.83s
+stress-ng: info:  [16315] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [16315]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [16315] cpu                1534     10.78      8.85      0.00       142.33       173.33
+0 raw.txt
+
+One Context Switch
+stress-ng: info:  [16339] dispatching hogs: 10 cpu
+stress-ng: info:  [16341] stress-ng-cpu: CPU affinity probably set, this can affect CPU loading
+stress-ng: info:  [16339] successful run completed in 10.09s
+stress-ng: info:  [16339] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [16339]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [16339] cpu                1291     10.01      7.30      0.22       129.02       171.68
+103690 raw.txt
+	---------Run 2---------
+
+Base Run
+stress-ng: info:  [16366] dispatching hogs: 10 cpu
+stress-ng: info:  [16367] stress-ng-cpu: CPU affinity probably set, this can affect CPU loading
+stress-ng: info:  [16366] successful run completed in 10.49s
+stress-ng: info:  [16366] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [16366]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [16366] cpu                1457     10.40      8.45      0.00       140.09       172.43
+0 raw.txt
+
+One Context Switch
+stress-ng: info:  [16389] dispatching hogs: 10 cpu
+stress-ng: info:  [16390] stress-ng-cpu: CPU affinity probably set, this can affect CPU loading
+stress-ng: info:  [16389] successful run completed in 10.05s
+stress-ng: info:  [16389] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [16389]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [16389] cpu                1280     10.00      7.32      0.21       128.00       169.99
+98775 raw.txt
+	---------Run 3---------
+
+Base Run
+stress-ng: info:  [16416] dispatching hogs: 10 cpu
+stress-ng: info:  [16417] stress-ng-cpu: CPU affinity probably set, this can affect CPU loading
+stress-ng: info:  [16416] successful run completed in 10.86s
+stress-ng: info:  [16416] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [16416]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [16416] cpu                1520     10.83      8.70      0.00       140.39       174.71
+0 raw.txt
+
+One Context Switch
+stress-ng: info:  [16440] dispatching hogs: 10 cpu
+stress-ng: info:  [16441] stress-ng-cpu: CPU affinity probably set, this can affect CPU loading
+stress-ng: info:  [16440] successful run completed in 10.05s
+stress-ng: info:  [16440] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [16440]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [16440] cpu                1300     10.00      7.27      0.18       129.94       174.50
+100825 raw.txt
+	---------Run 4---------
+
+Base Run
+stress-ng: info:  [16468] dispatching hogs: 10 cpu
+stress-ng: info:  [16469] stress-ng-cpu: CPU affinity probably set, this can affect CPU loading
+stress-ng: info:  [16468] successful run completed in 10.85s
+stress-ng: info:  [16468] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [16468]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [16468] cpu                1520     10.82      8.68      0.00       140.54       175.12
+0 raw.txt
+
+One Context Switch
+stress-ng: info:  [16491] dispatching hogs: 10 cpu
+stress-ng: info:  [16492] stress-ng-cpu: CPU affinity probably set, this can affect CPU loading
+stress-ng: info:  [16491] successful run completed in 10.04s
+stress-ng: info:  [16491] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [16491]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [16491] cpu                1280     10.00      7.46      0.14       128.00       168.42
+94003 raw.txt
+	---------Run 5---------
+
+Base Run
+stress-ng: info:  [16519] dispatching hogs: 10 cpu
+stress-ng: info:  [16520] stress-ng-cpu: CPU affinity probably set, this can affect CPU loading
+stress-ng: info:  [16519] successful run completed in 11.02s
+stress-ng: info:  [16519] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [16519]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [16519] cpu                1535     10.87      8.92      0.00       141.27       172.09
+0 raw.txt
+
+One Context Switch
+stress-ng: info:  [16542] dispatching hogs: 10 cpu
+stress-ng: info:  [16543] stress-ng-cpu: CPU affinity probably set, this can affect CPU loading
+stress-ng: info:  [16542] successful run completed in 10.05s
+stress-ng: info:  [16542] stressor       bogo ops real time  usr time  sys time   bogo ops/s   bogo ops/s
+stress-ng: info:  [16542]                           (secs)    (secs)    (secs)   (real time) (usr+sys time)
+stress-ng: info:  [16542] cpu                1280     10.00      7.30      0.17       128.00       171.35
+102368 raw.txt
