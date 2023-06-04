@@ -1,0 +1,1 @@
+logs running stress-ng for a long period of time to see performance during a full day
