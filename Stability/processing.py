@@ -19,6 +19,12 @@ with open("Stability\stabilityLog.txt", "r") as f:
                 data = f"12:{data.split(':')[1]} AM"
             else:
                 data = f"{int(data.split(':')[0])}:{data.split(':')[1]} AM"
+            if "Mon" in line:
+                data = "Mon " + data
+            elif "Tue" in line:
+                data = "Tue " + data
+            elif "Wed" in line:
+                data = "Wed " + data
             x.append(data)
         elif "events per second" in line:
             data = line.strip().split(" ")
@@ -30,3 +36,4 @@ with open("Stability\stabilityLog.txt", "r") as f:
     plt.ylabel("Events per second")
     plt.title("Stability Test")
     plt.show()
+    print(len(x))
