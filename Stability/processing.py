@@ -1,6 +1,7 @@
 # read and graph the number of events completed from stabilityLog.txt
 import matplotlib.pyplot as plt
-with open("Stability\stabilityLog.txt", "r") as f:
+id = input("Day: ")
+with open(f"Stability\{id}.txt", "r") as f:
     lines = f.readlines()
     x = [] # timestamps
     y = [] # evetns per second
@@ -35,5 +36,5 @@ with open("Stability\stabilityLog.txt", "r") as f:
     plt.xlabel("Time")
     plt.ylabel("Events per second")
     plt.title("Stability Test")
+    plt.savefig(f"Stability\{id}_{len(x)}.png")
     plt.show()
-    print(len(x))
