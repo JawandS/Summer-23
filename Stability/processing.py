@@ -1,32 +1,37 @@
 # read and graph the number of events completed from stabilityLog.txt
 import matplotlib.pyplot as plt
+import datetime, pytz
+
+# convert a UTC timestamp to an ET datetime object
+def utc_to_et(utc_dt):
+    # add the UTC timezone information to the datetime object
+    utc_dt = utc_dt.replace(tzinfo=pytz.utc)
+    # convert the UTC datetime object to an ET datetime object
+    et_dt = utc_dt.astimezone(pytz.timezone('US/Eastern'))
+    # return the ET datetime object
+    return et_dt
+
+# main method
 id = input("Day: ")
 with open(f"Stability\{id}.txt", "r") as f:
     lines = f.readlines()
     x = [] # timestamps
     y = [] # evetns per second
     for line in lines:
-        if "Jun" in line:
-            data = line.strip().split(" ")[4] # timestamp
-            # convert UTC to ET
-            if int(data.split(':')[0]) < 4:
-                data = f"{int(data.split(':')[0]) + 20}:{data.split(':')[1]}"
-            else:
-                data = f"{int(data.split(':')[0]) - 4}:{data.split(':')[1]}"
-            # convert 24 hour time to 12 hour time
-            if int(data.split(':')[0]) > 12:
-                data = f"{int(data.split(':')[0]) - 12}:{data.split(':')[1]} PM"
-            elif int(data.split(':')[0]) == 0:
-                data = f"12:{data.split(':')[1]} AM"
-            else:
-                data = f"{int(data.split(':')[0])}:{data.split(':')[1]} AM"
-            if "Mon" in line:
-                data = "Mon " + data
-            elif "Tue" in line:
-                data = "Tue " + data
-            elif "Wed" in line:
-                data = "Wed " + data
-            x.append(data)
+        if "UTC" in line:
+            # the timestamp string with two spaces
+            ts_str = line.strip()
+            # remove the extra space from the string
+            ts_str = ts_str.replace('  ', ' ')
+            # convert it to a datetime object with no extra space in the format code
+            ts_dt = datetime.datetime.strptime(ts_str, '%a %b %d %H:%M:%S %Z %Y')
+            # add the UTC timezone information
+            ts_dt = ts_dt.replace(tzinfo=pytz.utc)
+            # convert it to ET
+            et_dt = utc_to_et(ts_dt)
+            # convert the datetime object to a string
+            et_str = et_dt.strftime("%m/%d %H:%M")
+            x.append(et_str)
         elif "events per second" in line:
             data = line.strip().split(" ")
             y.append(float(data[-1]))
@@ -36,5 +41,6 @@ with open(f"Stability\{id}.txt", "r") as f:
     plt.xlabel("Time")
     plt.ylabel("Events per second")
     plt.title("Stability Test")
+    plt.tight_layout()
     plt.savefig(f"Stability\{id}_{len(x)}.png")
     plt.show()
